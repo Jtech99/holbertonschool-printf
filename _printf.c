@@ -92,7 +92,7 @@ int _printf(const char *format, ...)
                     count += print_number((unsigned int)num);
                 }
             }
-            /* unknown specifiers are ignored */
+            /* unknown specifiers are ignored silently */
         }
         else
         {
