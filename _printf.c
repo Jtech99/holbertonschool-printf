@@ -7,7 +7,7 @@ int print_number(unsigned int num)
 {
     int count = 0;
 
-    /* if num / 10 != 0, there are more digits to display */
+    /* print higher digits first */
     if (num / 10)
         count += print_number(num / 10);
 
@@ -20,7 +20,7 @@ int print_number(unsigned int num)
  * _printf - Prints formatted output to the standard output
  * @format: String containing the format specifiers
  *
- * Return: the number of characters printed
+ * Return: the number of characters printed, or -1 on NULL format
  */
 int _printf(const char *format, ...)
 {
@@ -38,6 +38,9 @@ int _printf(const char *format, ...)
         if (format[i] == '%')
         {
             i++;
+            if (format[i] == '\0')
+                break;
+
             if (format[i] == '%')
             {
                 _putchar('%');
@@ -89,12 +92,7 @@ int _printf(const char *format, ...)
                     count += print_number((unsigned int)num);
                 }
             }
-            else
-            {
-                _putchar('%');
-                _putchar(format[i]);
-                count += 2;
-            }
+            /* unknown specifiers are ignored */
         }
         else
         {
