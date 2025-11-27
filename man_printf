@@ -1,0 +1,119 @@
+TH _PRINTF 3 "2025-11-27" "Holberton School" "Library Functions"
+.SH NAME
+_printf \- produce formatted output to standard output
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+.sp
+.BI "int _printf(const char *" format ", ...);"
+.fi
+.SH DESCRIPTION
+The \fB_printf\fR function produces output according to a format string and writes it to
+\fBstdout\fR, the standard output stream.
+
+The \fIformat\fR string may contain ordinary characters and conversion specifications
+introduced by the \fB%\fR character.
+
+This implementation handles only the following conversion specifiers:
+.TP
+.B c
+Prints a single character.
+.TP
+.B s
+Prints a string. If the argument is \fBNULL\fR, the string \fB"(null)"\fR is printed.
+.TP
+.B %
+Prints a literal \fB%\fR character.
+.TP
+.B d, i
+Prints a signed decimal integer. Negative numbers are correctly handled.
+
+Flag characters, field width, precision, and length modifiers are \fBnot\fR supported.
+.SH RETURN VALUE
+Upon successful return, the total number of characters printed is returned
+(the terminating null byte is not counted).
+
+On error (in particular if \fIformat\fR is \fBNULL\fR), \fB\-1\fR is returned.
+.SH EXAMPLES
+.nf
+_printf("Hello %s!\\n", "world");      \fR→\fP Hello world!
+_printf("Character: %c\\n", 'X');      \fR→\fP Character: X
+_printf("Percent: %%\\n");             \fR→\fP Percent: %
+_printf("Negative: %d\\n", -123);      \fR→\fP Negative: -123
+_printf("%s %c %d %%\\n", "test", 'A', 42);
+        \fR→\fP test A 42 %
+.fi
+.SH SEE ALSO
+.BR printf (3),
+.BR putchar (3),
+.BR stdarg (3)
+.SH AUTHOR
+Written by TH _PRINTF 3 "2025-11-27" "Holberton School" "Library Functions"
+.SH NAME
+_printf \- produce formatted output to standard output
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+.sp
+.BI "int _printf(const char *" format ", ...);"
+.fi
+.SH DESCRIPTION
+The \fB_printf\fR function produces output according to a format string and writes it to
+\fBstdout\fR, the standard output stream.
+
+The \fIformat\fR string may contain ordinary characters and conversion specifications
+introduced by the \fB%\fR character.
+
+This implementation handles only the following conversion specifiers:
+.TP
+.B c
+Prints a single character.
+.TP
+.B s
+Prints a string. If the argument is \fBNULL\fR, the string \fB"(null)"\fR is printed.
+.TP
+.B %
+Prints a literal \fB%\fR character.
+.TP
+.B d, i
+Prints a signed decimal integer. Negative numbers are correctly handled.
+
+Flag characters, field width, precision, and length modifiers are \fBnot\fR supported.
+.SH RETURN VALUE
+Upon successful return, the total number of characters printed is returned
+(the terminating null byte is not counted).
+
+On error (in particular if \fIformat\fR is \fBNULL\fR), \fB\-1\fR is returned.
+.SH EXAMPLES
+.nf
+_printf("Hello %s!\\n", "world");      \fR→\fP Hello world!
+_printf("Character: %c\\n", 'X');      \fR→\fP Character: X
+_printf("Percent: %%\\n");             \fR→\fP Percent: %
+_printf("Negative: %d\\n", -123);      \fR→\fP Negative: -123
+_printf("%s %c %d %%\\n", "test", 'A', 42);
+        \fR→\fP test A 42 %
+.fi
+.SH SEE ALSO
+.BR printf (3),
+.BR putchar (3),
+.BR stdarg (3)
+
+.SH AUTHOR
+Written by Maxim DUTRUEL & Carlos SILVA
+
+.sp
+.I "I'm not going anywhere. You can print that wherever you want to.
+.br
+.I I'm here and I'm a Spur for life."
+.SH NOTES
+This function was developed as part of the \fBholbertonschool-printf\fR project.
+No C library printf-family functions are used; everything (including integer conversion)
+is implemented manually, respecting the project constraints.Holberton School students.
+.sp
+.I "I'm not going anywhere. You can print that wherever you want to.
+.br
+.I I'm here and I'm a Spur for life."
+.SH NOTES
+This function was developed as part of the \fBholbertonschool-printf\fR project.
+No C library printf-family functions are used; everything (including integer conversion)
+is implemented manually, respecting the project constraints.
