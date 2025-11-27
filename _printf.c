@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
         {
             i++;
             if (format[i] == '\0')
+                count--;
                 break;
 
             if (format[i] == '%')
